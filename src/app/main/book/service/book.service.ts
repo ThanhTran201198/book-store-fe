@@ -13,13 +13,26 @@ export class BookService {
   }
 
   /**
-   * Lây danh sách book
+   * Lây danh sách sách
    * @author ThanhTT92
    */
   getLishBook(body: any): Observable<any>{
     const payload = body;
     return this.http
       .post<any>(`/api/search`, payload)
+      .pipe(catchError((httpError: any) => {
+        return throwError(httpError);
+      }));
+  }
+
+  /**
+   * Tạo mới sách
+   * @author ThanhTT92
+   */
+  createBook(body: any): Observable<any>{
+    const payload = body;
+    return this.http
+      .post<any>(`/api/create`, payload)
       .pipe(catchError((httpError: any) => {
         return throwError(httpError);
       }));
