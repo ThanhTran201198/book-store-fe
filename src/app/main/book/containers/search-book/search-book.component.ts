@@ -34,6 +34,13 @@ export class SearchBookComponent implements OnInit {
   onCreate() {
     this.router.navigate(['create']).then();
   }
+  onDelete(bookId? : any){
+    this.bookService.deleteBook(bookId).pipe(take(1)).subscribe(res => {
+      if(res?.success){
+        this.onSearch();
+      }
+    });
+  }
 
 
 }

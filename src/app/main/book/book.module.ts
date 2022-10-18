@@ -7,6 +7,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { UpdateBookComponent } from './containers/update-book/update-book.component';
 import { HeaderBookComponent } from './containers/header-book/header-book.component';
 import {NzIconModule} from "ng-zorro-antd/icon";
+import { CreateCoverImageComponent } from './containers/create-cover-image/create-cover-image.component';
+import {NzSelectModule} from "ng-zorro-antd/select";
 
 
 @NgModule({
@@ -15,13 +17,15 @@ import {NzIconModule} from "ng-zorro-antd/icon";
     CreateBookComponent,
     UpdateBookComponent,
     HeaderBookComponent,
+    CreateCoverImageComponent,
   ],
-  imports: [
-    BookRoutingModule,
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NzIconModule,
-  ],
+    imports: [
+        BookRoutingModule,
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NzIconModule,
+        NzSelectModule,
+    ],
 })
 export class BookModule {}

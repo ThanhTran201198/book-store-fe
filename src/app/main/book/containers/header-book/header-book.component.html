@@ -1,1 +1,65 @@
+<nav class="navbar navbar--read navbar-light navbar-expand" style="background-color: #F5F4F2;">
+  <div class="container px-3"><a href="/" class="navbar-brand mr-4"><img
+    src="//metruyenchu.com/assets/images/logo.png?260333" alt="" height="48"></a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown dropdown-hover"><a href="javascript:void(0)"
+                                                      class="nav-link d-flex align-items-center"><i
+        class="nh-icon icon-menu fz-13 mr-2"></i> Thể loại </a>
+        <div class="dropdown-menu dropdown-menu--category rounded-0">
+          <div class="row no-gutters"><a href="/truyen/" class="dropdown-item col-6 d-flex align-items-center"><i
+            class="svg-icon mr-2"></i>Tất cả </a><a href="/truyen/?genre=2"
+                                                    class="dropdown-item col-6 d-flex align-items-center"><i
+            class="svg-icon mr-2"></i>Tiên Hiệp </a><a href="/truyen/?genre=3"
+                                                       class="dropdown-item col-6 d-flex align-items-center"><i
+            class="svg-icon mr-2"></i>Huyền Huyễn </a><a href="/truyen/?genre=4"
+                                                         class="dropdown-item col-6 d-flex align-items-center"><i
+            class="svg-icon mr-2"></i>Khoa Huyễn </a><a href="/truyen/?genre=5"
+                                                        class="dropdown-item col-6 d-flex align-items-center"><i
+            class="svg-icon mr-2"></i>Võng Du </a><a href="/truyen/?genre=6"
+                                                     class="dropdown-item col-6 d-flex align-items-center"><i
+            class="svg-icon mr-2"></i>Đô Thị </a><a href="/truyen/?genre=7"
+                                                    class="dropdown-item col-6 d-flex align-items-center"><i
+            class="svg-icon mr-2"></i>Đồng Nhân </a><a href="/truyen/?genre=8"
+                                                       class="dropdown-item col-6 d-flex align-items-center"><i
+            class="svg-icon mr-2"></i>Dã Sử </a><a href="/truyen/?genre=9"
+                                                   class="dropdown-item col-6 d-flex align-items-center"><i
+            class="svg-icon mr-2"></i>Cạnh Kỹ </a><a href="/truyen/?genre=11"
+                                                     class="dropdown-item col-6 d-flex align-items-center"><i
+            class="svg-icon mr-2"></i>Huyền Nghi </a><a href="/truyen/?genre=12"
+                                                        class="dropdown-item col-6 d-flex align-items-center"><i
+            class="svg-icon mr-2"></i>Kiếm Hiệp </a><a href="/truyen/?genre=20"
+                                                       class="dropdown-item col-6 d-flex align-items-center"><i
+            class="svg-icon mr-2"></i>Kỳ Ảo </a></div>
+        </div>
+      </li>
+      <li class="nav-item dropdown dropdown-hover"><a href="/bang-xep-hang/" class="nav-link d-flex align-items-center">
+        Bảng xếp hạng </a>
+        <div class="dropdown-menu rounded-0"><a href="/bang-xep-hang/tuan/thinh-hanh" class="dropdown-item">Thịnh
+          hành</a><a href="/bang-xep-hang/tuan/doc-nhieu" class="dropdown-item">Đọc nhiều</a><a
+          href="/bang-xep-hang/tuan/tang-thuong" class="dropdown-item">Tặng thưởng</a><a
+          href="/bang-xep-hang/tuan/de-cu" class="dropdown-item">Đề cử</a><a href="/bang-xep-hang/tuan/yeu-thich"
+                                                                             class="dropdown-item">Yêu thích</a><a
+          href="/bang-xep-hang/tuan/thao-luan" class="dropdown-item">Thảo luận</a></div>
+      </li>
+    </ul>
+    <div method="post" class="header__search-form ml-auto w-25"><input type="text" name="q" placeholder="Tìm kiếm"
+                                                                       class="form-control border-primary">
+      <button class="btn bg-transparent text-primary shadow-none"><i class="nh-icon icon-search float-left"></i>
+      </button>
+    </div><!---->
+    <ul class="list-unstyled mb-0 ml-auto d-flex justify-content-center">
+      <li class="mr-4"><a href="https://pub.truyen.onl/books/create" target="_blank"
+                          class="d-flex align-items-center px-3 py-2"><i class="nh-icon icon-up fz-13 mr-2"></i> Đăng
+        truyện </a></li>
+      <li><a href="javascript:void(0)" data-toggle="modal" class="d-block px-3 py-2"> Đăng nhập </a></li>
+      <li><a href="javascript:void(0)" data-toggle="modal" class="d-block px-3 py-2"> Đăng ký </a></li>
+    </ul>
+  </div>
+</nav>
+<br>
+<div style="background-color: #F5F4F2; height: 72px">
 
+</div>
+<img *ngIf="imageUrl !== ''" src="{{imageUrl}}" alt="Girl in a jacket"
+     height="388" width="100%" style="cursor: pointer;">
+<!--<span class="top-bg-op-box" style="background-image: url( {{imageUrl}}); position: absolute; z-index: 0; left: 0px; overflow: hidden; width: 100%; height: 388px; background-repeat: no-repeat; background-position: 50% 0px; background-size: cover;"></span>-->

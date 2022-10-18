@@ -37,4 +37,65 @@ export class BookService {
         return throwError(httpError);
       }));
   }
+
+  /**
+   * Tạo tìm sách theo bookId
+   * @author ThanhTT92
+   */
+  findById(bookId: any): Observable<any>{
+    return this.http
+      .get<any>(`/api/findById/` + bookId)
+      .pipe(catchError((httpError: any) => {
+        return throwError(httpError);
+      }));
+  }
+  /**
+   * Xóa sách theo bookId
+   * @author ThanhTT92
+   */
+  deleteBook(bookId: any): Observable<any>{
+    return this.http
+      .get<any>(`/api/delete/` + bookId)
+      .pipe(catchError((httpError: any) => {
+        return throwError(httpError);
+      }));
+  }
+
+  /**
+   * Tạo mới ảnh bìa
+   * @author ThanhTT92
+   */
+  createCoverImage(body: any): Observable<any>{
+    const payload = body;
+    return this.http
+      .post<any>(`/api/coverImage/create`, payload)
+      .pipe(catchError((httpError: any) => {
+        return throwError(httpError);
+      }));
+  }
+
+  /**
+   * Tìm ảnh bìa ngẫu nhiên
+   * @author ThanhTT92
+   */
+  searchOneCoverImage(): Observable<any>{
+    return this.http
+      .get<any>(`/api/coverImage/searchOneCoverImage`)
+      .pipe(catchError((httpError: any) => {
+        return throwError(httpError);
+      }));
+  }
+
+  /**
+   * Tạo mới ảnh bìa
+   * @author ThanhTT92
+   */
+  getCat(body: any): Observable<any>{
+    const payload = body;
+    return this.http
+      .post<any>(`/api/cat/search`, payload)
+      .pipe(catchError((httpError: any) => {
+        return throwError(httpError);
+      }));
+  }
 }

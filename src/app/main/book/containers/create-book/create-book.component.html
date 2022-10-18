@@ -1,154 +1,228 @@
-<div style="background-color: whitesmoke; padding: 20px 20px 20px 20px;">
-  <div>
-    <a>
-      Sách
-    </a>
-    <span>/</span>
-    <span>Tạo mới sách</span>
-  </div>
-  <div>
-    <div class="d-flex justify-content-between">
-      <div>
-        <strong style="font-size: 22px">
-          Tạo mới sách
-        </strong>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="card-body">
-  <div></div>
-  <strong>
-    Thông tin sách
-  </strong>
-  <div class="row mt-3">
-    <div class="col-1 center-me" style="font-size: 20px;">
-      Tên sách<span style="color: red;">*</span> :
-    </div>
-    <div class="col">
-      <input type="text" class="form-control form-control-sm"
-             style="width: 50%; height: 40px; "
-             [(ngModel)]="booKName">
-    </div>
-  </div>
-  <div class="row mt-3">
-    <div class="col-1 center-me" style="font-size: 20px;">
-      Giá bán<span style="color: red;">*</span> :
-    </div>
-    <div class="col">
-      <input type="text" class="form-control form-control-sm"
-             style="width: 50%; height: 40px; "
-             [(ngModel)]="booKPrice">
-    </div>
-  </div>
-  <div class="row mt-3">
-    <div class="col-1 center-me" style="font-size: 20px;">
-      Mô tả<span style="color: red;">*</span> :
-    </div>
-    <div class="col">
-      <input type="text" class="form-control form-control-sm"
-             style="width: 50%; height: 40px; "
-             [(ngModel)]="bookDescription">
-    </div>
-  </div>
-  <div class="row mt-3">
-    <div class="col-1 center-me" style="font-size: 20px;">
-      Hình ảnh<span style="color: red;">*</span> :
-    </div>
-    <div class="col">
-      <input type="file" class="form-control form-control-sm"
-             style="width: 50%; height: 40px; "
-             [(ngModel)]="bookImage">
-    </div>
-  </div>
-</div>
-<div class="shawdow" (click)="onShow()" style="cursor: pointer; height: 290px; width: 210px" >
-  <span nz-icon nzType="upload" nzTheme="outline"></span>
-</div>
-<span nz-icon nzType="upload" nzTheme="outline"></span>
-<!--<img src=“https://static.cdnno.com/poster/quang-am-chi-ngoai/300.jpg?1655013821”>-->
-<img src="https://static.cdnno.com/poster/quang-am-chi-ngoai/300.jpg?1655013821" alt="Girl in a jacket" width="210"
-       height="290" class="shawdow" (click)="onShow()" style="cursor: pointer;">
-
-<div class="d-flex mt-4">
-  <div class="justify-content-start" style="margin: auto auto auto 20px;">
-    <button type="button" class="btn btn-primary"
-            style="background-color: white; color: black; border: 1px solid black;"
-            (click)="onReturn()">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"
-           class="bi bi-chevron-left">
-        <path fill-rule="evenodd"
-              d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"></path>
-      </svg>
-      Quay lại
-    </button>
-  </div>
-  <div class="justify-content-end" style="margin: auto 20px auto auto;">
-    <button *ngIf="!disableSave" class="btn btn-primary" (click)="onSave()">
-      Lưu
-      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 448 512"
-           style="fill: white;">
-        <path
-          d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM272 80v80H144V80h128zm122 352H54a6 6 0 0 1-6-6V86a6 6 0 0 1 6-6h42v104c0 13.255 10.745 24 24 24h176c13.255 0 24-10.745 24-24V83.882l78.243 78.243a6 6 0 0 1 1.757 4.243V426a6 6 0 0 1-6 6zM224 232c-48.523 0-88 39.477-88 88s39.477 88 88 88 88-39.477 88-88-39.477-88-88-88zm0 128c-22.056 0-40-17.944-40-40s17.944-40 40-40 40 17.944 40 40-17.944 40-40 40z"></path>
-      </svg>
-    </button>
-    <button *ngIf="disableSave" class="btn btn-primary" disabled="true">
-      Lưu
-      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 448 512"
-           style="fill: white;">
-        <path
-          d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM272 80v80H144V80h128zm122 352H54a6 6 0 0 1-6-6V86a6 6 0 0 1 6-6h42v104c0 13.255 10.745 24 24 24h176c13.255 0 24-10.745 24-24V83.882l78.243 78.243a6 6 0 0 1 1.757 4.243V426a6 6 0 0 1-6 6zM224 232c-48.523 0-88 39.477-88 88s39.477 88 88 88 88-39.477 88-88-39.477-88-88-88zm0 128c-22.056 0-40-17.944-40-40s17.944-40 40-40 40 17.944 40 40-17.944 40-40 40z"></path>
-      </svg>
-    </button>
-  </div>
-</div>
-<button (click)="onShow()">Show</button>
-
-<!--<div class="jumbotron text-center">-->
-<!--  <h1 class="display-5">Angular 7 Image Upload with Reactive Forms</h1>-->
-<!--</div>-->
-
-<!--<div class="container">-->
-<!--  <div class="row custom-wrapper">-->
-<!--    <div class="col-md-12">-->
-<!--      &lt;!&ndash; Form starts &ndash;&gt;-->
-<!--      <div [formGroup]="registrationForm" (ngSubmit)="onSubmit()">-->
-<!--        <div class="group-gap">-->
-<!--          &lt;!&ndash; Upload image &ndash;&gt;-->
-<!--          <div class="avatar-upload">-->
-<!--            <div class="avatar-edit">-->
-<!--              <input-->
-<!--                type="file"-->
-<!--                id="imageUpload"-->
-<!--                accept=".png, .jpg, .jpeg"-->
-<!--                #fileInput-->
-<!--                (change)="uploadFile($event)"-->
-<!--              />-->
+<app-header-book></app-header-book>
+<!--<div class="d-flex justify-content-center" style="background-color: red; width: 1180px">-->
+<div class="container" style="position: relative; top: -140px;">
+  <section style="border-radius: 10px; background-color: white;">
+    <!--  <div class="card-body" >-->
+    <!--      <a>-->
+    <!--        Sách-->
+    <!--      </a>-->
+    <!--      <span>/</span>-->
+    <!--      <span>Tạo mới sách</span>-->
+    <!--    <div>-->
+    <!--      <div class="d-flex justify-content-between">-->
+    <!--        <div>-->
+    <!--          <strong style="font-size: 22px">-->
+    <!--            Tạo mới sách-->
+    <!--          </strong>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <!--    <div class="page-content rounded-2">-->
+    <!--      <div class="row no-gutters">-->
+    <!--        <div class="col-12">-->
+    <!--          <div class="media">-->
+    <!--            <div class="mr-4 text-center">-->
+    <!--              <div class="nh-thumb nh-thumb&#45;&#45;210 shadow">-->
+    <!--                <img src="https://static.cdnno.com/poster/ta-thuc-su-la-phan-phai-a/300.jpg?1585205803"-->
+    <!--                alt="Ta Thực Sự Là Phản Phái A">-->
+    <!--&lt;!&ndash;                <div *ngIf="imageUrl === ''" class="shawdow center-image" (click)="fileInput.click()"&ndash;&gt;-->
+    <!--&lt;!&ndash;                     style="cursor: pointer; height: 290px; width: 210px">&ndash;&gt;-->
+    <!--&lt;!&ndash;                  <span nz-icon nzType="upload" nzTheme="outline" style="font-size: 50px;color: #9f9fcc"></span>&ndash;&gt;-->
+    <!--&lt;!&ndash;                </div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                <img *ngIf="imageUrl !== ''" src="{{imageUrl}}" alt="Girl in a jacket" width="210"&ndash;&gt;-->
+    <!--&lt;!&ndash;                     height="290" class="shawdow" (click)="fileInput.click()" style="cursor: pointer;">&ndash;&gt;-->
+    <!--              </div>-->
+    <!--            </div>-->
+    <!--            <div class="media-body">-->
+    <!--              <div class="d-flex justify-content-start mb-3"><h1 class="h3 mr-2"><a-->
+    <!--                href="https://metruyenchu.com/truyen/ta-thuc-su-la-phan-phai-a">Ta Thực Sự Là Phản Phái A</a></h1><a-->
+    <!--                href="javascript:void(0)" data-toggle="modal" class="text-tertiary fz-13 mt-1"><small><i-->
+    <!--                class="nh-icon icon-flag"></i></small></a></div>-->
+    <!--              <ul class="list-unstyled mb-4">-->
+    <!--                <li class="d-inline-block border border-secondary px-3 py-1 text-secondary rounded-3 mr-2 mb-2"><a-->
+    <!--                  href="https://metruyenchu.com/tac-gia/714" class="text-secondary"> Tình Sử Tẫn Thành Hối </a></li>-->
+    <!--                <li class="d-inline-block border border-danger px-3 py-1 text-danger rounded-3 mr-2 mb-2"> Đang ra</li>-->
+    <!--                <li class="d-inline-block border border-primary px-3 py-1 text-primary rounded-3 mr-2 mb-2"><a-->
+    <!--                  href="https://metruyenchu.com/truyen?genre=3" class="text-primary">Huyền Huyễn</a></li>-->
+    <!--              </ul>-->
+    <!--              <ul class="list-unstyled d-flex mb-4">-->
+    <!--                <li class="mr-5">-->
+    <!--                  <div class="font-weight-semibold h4 mb-1">1987</div>-->
+    <!--                  <div>Chương</div>-->
+    <!--                </li>-->
+    <!--                <li class="mr-5">-->
+    <!--                  <div class="font-weight-semibold h4 mb-1">6</div>-->
+    <!--                  <div>Chương/tuần</div>-->
+    <!--                </li>-->
+    <!--                <li class="mr-5">-->
+    <!--                  <div class="font-weight-semibold h4 mb-1">649.6K</div>-->
+    <!--                  <div>Lượt đọc</div>-->
+    <!--                </li>-->
+    <!--                <li class="mr-5">-->
+    <!--                  <div id="bookmarkedValue" class="font-weight-semibold h4 mb-1">1671</div>-->
+    <!--                  <div>Cất giữ</div>-->
+    <!--                </li>-->
+    <!--              </ul>-->
+    <!--              <div class="d-flex align-items-center mb-4"><span class="nh-rating"><i class="nh-icon icon-star"></i><i-->
+    <!--                class="nh-icon icon-star"></i><i class="nh-icon icon-star"></i><i class="nh-icon icon-star"></i><i-->
+    <!--                class="nh-icon icon-star"></i><span class="active" style="width: 90%;"><i class="nh-icon icon-star"></i><i-->
+    <!--                class="nh-icon icon-star"></i><i class="nh-icon icon-star"></i><i class="nh-icon icon-star"></i><i-->
+    <!--                class="nh-icon icon-star"></i></span></span><span class="d-inline-block ml-2"><span-->
+    <!--                class="font-weight-semibold">4.32</span>/5</span><span class="d-inline-block text-secondary ml-1">(22 đánh giá)</span>-->
+    <!--              </div>-->
+    <!--              <ul class="list-unstyled d-flex align-items-center">-->
+    <!--                <li id="reading-book" class="mr-3 w-150"><a-->
+    <!--                  href="https://metruyenchu.com/truyen/ta-thuc-su-la-phan-phai-a/chuong-1"-->
+    <!--                  class="cursor-pointer btn btn-primary btn-md btn-block btn-shadow font-weight-semibold d-flex align-items-center justify-content-center"-->
+    <!--                  style="color: rgb(255, 255, 255);"><i class="nh-icon icon-glass mr-2"></i>Đọc truyện </a></li>-->
+    <!--                <li id="bookmark" class="mr-3 w-150"><span data-v-20fe2610="">&lt;!&ndash;&ndash;&gt; <a data-v-20fe2610=""-->
+    <!--                                                                                         href="javascript:void(0);"-->
+    <!--                                                                                         class="btn btn-outline-secondary btn-md btn-block font-weight-semibold d-flex align-items-center justify-content-center"><i-->
+    <!--                  data-v-20fe2610="" class="nh-icon icon-save mr-2"></i> Đánh dấu-->
+    <!--    </a> &lt;!&ndash;&ndash;&gt;</span></li>-->
+    <!--                <li id="suggest-book" class="mr-3 w-150">-->
+    <!--                  <div data-v-5494eeb4="">&lt;!&ndash;&ndash;&gt; <a data-v-5494eeb4="" href="javascript:void(0);"-->
+    <!--                                                     class="btn btn-outline-warning btn-md btn-block bg-yellow-white text-primary font-weight-semibold d-flex align-items-center justify-content-center">-->
+    <!--                    &lt;!&ndash;&ndash;&gt; <i data-v-5494eeb4="" class="svg-icon icon-flower mr-2"></i> Đề cử-->
+    <!--                  </a> &lt;!&ndash;&ndash;&gt;</div>-->
+    <!--                </li>-->
+    <!--              </ul>-->
+    <!--            </div>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+    <!--    <div class="page-content rounded-2">-->
+    <div class="row">
+      <div class="col-9">
+        <div class="card-body">
+          <strong>
+            Thông tin sách
+          </strong>
+          <div class="row mt-3">
+            <div class="col-2 center-me" style="font-size: 20px;">
+              Tên sách<span style="color: red;">*</span> :
+            </div>
+            <div class="col">
+              <input type="text" class="form-control form-control-sm"
+                     style="width: 70%; height: 40px; "
+                     [(ngModel)]="booKName">
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-2 center-me" style="font-size: 20px;">
+              Giá bán<span style="color: red;">*</span> :
+            </div>
+            <div class="col">
+              <input type="number" class="form-control form-control-sm"
+                     style="width: 70%; height: 40px; "
+                     [(ngModel)]="booKPrice">
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-2 center-me" style="font-size: 20px;">
+              Mô tả<span style="color: red;">*</span> :
+            </div>
+            <div class="col">
+              <input type="text" class="form-control form-control-sm"
+                     style="width: 70%; height: 40px; "
+                     [(ngModel)]="bookDescription">
+            </div>
+          </div>
+<!--          <div class="row mt-3">-->
+<!--            <div class="col-2 center-me" style="font-size: 20px;">-->
+<!--              Thể loại<span style="color: red;">*</span> :-->
 <!--            </div>-->
-<!--            <div class="avatar-preview">-->
-<!--              <div-->
-<!--                id="imagePreview"-->
-<!--                [style.backgroundImage]="'url(' + imageUrl + ')'"-->
-<!--              ></div>-->
+<!--            <div class="col">-->
+<!--              <select class="form-control form-control-sm"-->
+<!--                      style="width: 70%;  height: 40px;"-->
+<!--                      [(ngModel)]="selectedBookStatus">-->
+<!--                <option value=null>&#45;&#45; Chọn &#45;&#45;</option>-->
+<!--                <option value="1">Tiên Hiệp</option>-->
+<!--                <option value="2">Huyền Huyễn</option>-->
+<!--                <option value="3">Khoa Huyễn</option>-->
+<!--                <option value="4">Võng Du</option>-->
+<!--                <option value="5">Đô Thị</option>-->
+<!--                <option value="6">Đồng Nhân</option>-->
+<!--                <option value="7">Dã Sử</option>-->
+<!--                <option value="8">Canh Kỹ</option>-->
+<!--                <option value="9">Huyền Nghi</option>-->
+<!--                <option value="10">Kiếm Hiệp</option>-->
+<!--                <option value="11">Kỳ Ảo</option>-->
+<!--              </select>-->
 <!--            </div>-->
 <!--          </div>-->
-<!--        </div>-->
+          <div class="row mt-3">
+            <div class="col-2 center-me" style="font-size: 20px;">
+              Thể loại<span style="color: red;">*</span> :
+            </div>
+            <div class="col">
+              <nz-select   nzShowSearch nzAllowClear nzPlaceHolder="Chọn thể loại" [(ngModel)]="selectedBookCategory" [nzSize]="'large'" style="width: 70%;">
+                <nz-option *ngFor="let item of bookCategory" [nzValue]="item?.keyNumber" [nzLabel]="item?.name"></nz-option>
+              </nz-select>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-2 center-me" style="font-size: 20px;">
+              Trạng thái<span style="color: red;">*</span> :
+            </div>
+            <div class="col">
+              <nz-select   nzShowSearch nzAllowClear nzPlaceHolder="Chọn trạng thái" [(ngModel)]="selectedBookStatus" [nzSize]="'large'" style="width: 70%;">
+                <nz-option *ngFor="let item of bookStatus" [nzValue]="item?.keyNumber" [nzLabel]="item?.name"></nz-option>
+              </nz-select>
+            </div>
+          </div>
 
-<!--        &lt;!&ndash; Submit Button &ndash;&gt;-->
-<!--        <button-->
-<!--          type="submit"-->
-<!--          class="btn btn-danger btn-lg btn-block"-->
-<!--          (click)="fileInput.click()"-->
-<!--        >-->
-<!--          Upload Imageaadasd-->
-<!--        </button>-->
-<!--      </div>-->
-<!--      &lt;!&ndash; Form ends &ndash;&gt;-->
-<!--    </div>-->
-<!--  </div>-->
+        </div>
+      </div>
+      <div>
+        <div class="card-body">
+          <div *ngIf="imageUrl === ''" class="shawdow center-image" (click)="fileInput.click()"
+               style="cursor: pointer; height: 290px; width: 210px; border: 1px solid;">
+            <span nz-icon nzType="upload" nzTheme="outline" style="font-size: 50px;color: #9f9fcc"></span>
+          </div>
+          <img *ngIf="imageUrl !== ''" src="{{imageUrl}}" alt="Girl in a jacket" width="210"
+               height="290" class="shawdow" (click)="fileInput.click()" style="cursor: pointer;">
+        </div>
+      </div>
+    </div>
+    <div class="d-flex mt-4">
+      <div class="justify-content-start" style="margin: auto auto auto 20px;">
+        <button type="button" class="btn btn-primary"
+                style="background-color: white; color: black; border: 1px solid black;"
+                (click)="onReturn()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"
+               class="bi bi-chevron-left">
+            <path fill-rule="evenodd"
+                  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"></path>
+          </svg>
+          Quay lại
+        </button>
+      </div>
+      <div class="justify-content-end" style="margin: auto 20px auto auto;">
+        <button *ngIf="!disableSave" class="btn btn-primary" (click)="onSave()">
+          Lưu
+          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 448 512"
+               style="fill: white;">
+            <path
+              d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM272 80v80H144V80h128zm122 352H54a6 6 0 0 1-6-6V86a6 6 0 0 1 6-6h42v104c0 13.255 10.745 24 24 24h176c13.255 0 24-10.745 24-24V83.882l78.243 78.243a6 6 0 0 1 1.757 4.243V426a6 6 0 0 1-6 6zM224 232c-48.523 0-88 39.477-88 88s39.477 88 88 88 88-39.477 88-88-39.477-88-88-88zm0 128c-22.056 0-40-17.944-40-40s17.944-40 40-40 40 17.944 40 40-17.944 40-40 40z"></path>
+          </svg>
+        </button>
+        <button *ngIf="disableSave" class="btn btn-primary" disabled="true">
+          Lưu
+          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 448 512"
+               style="fill: white;">
+            <path
+              d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM272 80v80H144V80h128zm122 352H54a6 6 0 0 1-6-6V86a6 6 0 0 1 6-6h42v104c0 13.255 10.745 24 24 24h176c13.255 0 24-10.745 24-24V83.882l78.243 78.243a6 6 0 0 1 1.757 4.243V426a6 6 0 0 1-6 6zM224 232c-48.523 0-88 39.477-88 88s39.477 88 88 88 88-39.477 88-88-39.477-88-88-88zm0 128c-22.056 0-40-17.944-40-40s17.944-40 40-40 40 17.944 40 40-17.944 40-40 40z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <input name="file" type="file" (change)="onFileChange($event)" #fileInput style="display: none">
+  </section>
+</div>
+<button (click)="onShow()">onShow</button>
 <!--</div>-->
-
-
-
 
 

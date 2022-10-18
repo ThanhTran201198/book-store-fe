@@ -4,8 +4,20 @@ import {SearchBookComponent} from "./containers/search-book/search-book.componen
 import {CreateBookComponent} from "./containers/create-book/create-book.component";
 import {UpdateBookComponent} from "./containers/update-book/update-book.component";
 import {HeaderBookComponent} from "./containers/header-book/header-book.component";
+import {CreateCoverImageComponent} from "./containers/create-cover-image/create-cover-image.component";
 
+// const allPages = [
+//   {
+//     path: 'create',
+//     component: CreateBookComponent,
+//   },
+// ];
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   component: HeaderBookComponent,
+  //   children: allPages
+  // },
   {
     path: '',
     component: SearchBookComponent,
@@ -15,12 +27,16 @@ const routes: Routes = [
     component: CreateBookComponent,
   },
   {
-    path: 'update',
+    path: 'update/:id',
     component: UpdateBookComponent,
   },
   {
     path: 'header',
     component: HeaderBookComponent,
+  },
+  {
+    path: 'coverImage/create',
+    component: CreateCoverImageComponent,
   },
 ];
 @NgModule({
