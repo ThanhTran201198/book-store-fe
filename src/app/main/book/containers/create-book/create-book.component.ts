@@ -21,8 +21,18 @@ export class CreateBookComponent implements OnInit {
   selectedValue=null;
   selectedBookCategory = null;
   selectedBookStatus = null;
+  selectedBookProperties = null;
+  selectedBookMainCharacter = null;
+  selectedBookWorldScene = null;
+  selectedBookType = null;
+  selectedBookSight = null;
   bookCategory: any[] = [];
   bookStatus: any[] = [];
+  bookProperties: any[] = [];
+  bookMainCharacter: any[] = [];
+  bookWorldScene: any[] = [];
+  bookType: any[] = [];
+  bookSight: any[] = [];
 
   optionList = [
     { label: 'Lucy', value: 'lucy', age: 20 },
@@ -39,11 +49,19 @@ export class CreateBookComponent implements OnInit {
     this.dataGetCat = {
       bookCategory: true,
       bookStatus: true,
+      bookProperties: true,
+      bookMainCharacter: true,
+      bookWorldScene: true,
+      bookType: true,
     };
     this.bookService.getCat(this.dataGetCat).pipe(take(1)).subscribe(res => {
       if(res?.success === true){
         this.bookStatus = res?.content?.bookStatus;
         this.bookCategory = res?.content?.bookCategory;
+        this.bookProperties = res?.content?.bookProperties;
+        this.bookMainCharacter = res?.content?.bookMainCharacter;
+        this.bookWorldScene = res?.content?.bookWorldScene;
+        this.bookType = res?.content?.bookType;
       }
     });
   }

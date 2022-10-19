@@ -1,0 +1,29 @@
+.center-image {
+  line-height: 200px;
+  text-align: center;
+}
+.center-image1 {
+  line-height: 250px;
+  text-align: center;
+}
+
+.avatar {
+  cursor: pointer;
+  height: 200px;
+  width: 200px;
+  border: 1px solid;
+  border-radius: 50%;
+  margin-top: 65px;
+  margin-left: 40px;
+  //position: absolute;
+}
+.avatar1 {
+  cursor: pointer;
+  height: 250px;
+  width: 250px;
+  border: 1px solid;
+  position: relative;
+  margin-top: 40px;
+  margin-left: 40px;
+  right: 306px;
+}

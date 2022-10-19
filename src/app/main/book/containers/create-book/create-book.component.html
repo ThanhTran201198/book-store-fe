@@ -101,7 +101,7 @@
             Thông tin sách
           </strong>
           <div class="row mt-3">
-            <div class="col-2 center-me" style="font-size: 20px;">
+            <div class="col-2 center-me" style="font-size: 16px;">
               Tên sách<span style="color: red;">*</span> :
             </div>
             <div class="col">
@@ -111,7 +111,7 @@
             </div>
           </div>
           <div class="row mt-3">
-            <div class="col-2 center-me" style="font-size: 20px;">
+            <div class="col-2 center-me" style="font-size: 16px;">
               Giá bán<span style="color: red;">*</span> :
             </div>
             <div class="col">
@@ -121,7 +121,7 @@
             </div>
           </div>
           <div class="row mt-3">
-            <div class="col-2 center-me" style="font-size: 20px;">
+            <div class="col-2 center-me" style="font-size: 16px;">
               Mô tả<span style="color: red;">*</span> :
             </div>
             <div class="col">
@@ -131,7 +131,7 @@
             </div>
           </div>
 <!--          <div class="row mt-3">-->
-<!--            <div class="col-2 center-me" style="font-size: 20px;">-->
+<!--            <div class="col-2 center-me" style="font-size: 16px;">-->
 <!--              Thể loại<span style="color: red;">*</span> :-->
 <!--            </div>-->
 <!--            <div class="col">-->
@@ -154,7 +154,7 @@
 <!--            </div>-->
 <!--          </div>-->
           <div class="row mt-3">
-            <div class="col-2 center-me" style="font-size: 20px;">
+            <div class="col-2 center-me" style="font-size: 16px;">
               Thể loại<span style="color: red;">*</span> :
             </div>
             <div class="col">
@@ -164,7 +164,7 @@
             </div>
           </div>
           <div class="row mt-3">
-            <div class="col-2 center-me" style="font-size: 20px;">
+            <div class="col-2 center-me" style="font-size: 16px;">
               Trạng thái<span style="color: red;">*</span> :
             </div>
             <div class="col">
@@ -173,7 +173,46 @@
               </nz-select>
             </div>
           </div>
-
+          <div class="row mt-3">
+            <div class="col-2 center-me" style="font-size: 16px;">
+              Thuộc tính<span style="color: red;">*</span> :
+            </div>
+            <div class="col">
+              <nz-select   nzShowSearch nzAllowClear nzPlaceHolder="Chọn thuộc tính" [(ngModel)]="selectedBookProperties" [nzSize]="'large'" style="width: 70%;">
+                <nz-option *ngFor="let item of bookProperties" [nzValue]="item?.keyNumber" [nzLabel]="item?.name"></nz-option>
+              </nz-select>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-2 center-me" style="font-size: 16px;">
+              Nhân vật chính<span style="color: red;">*</span> :
+            </div>
+            <div class="col">
+              <nz-select   nzShowSearch nzAllowClear nzPlaceHolder="Chọn tính cách nhân vật chính" [(ngModel)]="selectedBookMainCharacter" [nzSize]="'large'" style="width: 70%;">
+                <nz-option *ngFor="let item of bookMainCharacter" [nzValue]="item?.keyNumber" [nzLabel]="item?.name"></nz-option>
+              </nz-select>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-2 center-me" style="font-size: 16px;">
+              Bối cảnh thế giới<span style="color: red;">*</span> :
+            </div>
+            <div class="col">
+              <nz-select   nzShowSearch nzAllowClear nzPlaceHolder="Chọn bối cảnh thế giới" [(ngModel)]="selectedBookWorldScene" [nzSize]="'large'" style="width: 70%;">
+                <nz-option *ngFor="let item of bookWorldScene" [nzValue]="item?.keyNumber" [nzLabel]="item?.name"></nz-option>
+              </nz-select>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-2 center-me" style="font-size: 16px;">
+              Lưu phái<span style="color: red;">*</span> :
+            </div>
+            <div class="col">
+              <nz-select   nzShowSearch nzAllowClear nzPlaceHolder="Chọn lưu phái" [(ngModel)]="selectedBookType" [nzSize]="'large'" style="width: 70%;">
+                <nz-option *ngFor="let item of bookType" [nzValue]="item?.keyNumber" [nzLabel]="item?.name"></nz-option>
+              </nz-select>
+            </div>
+          </div>
         </div>
       </div>
       <div>

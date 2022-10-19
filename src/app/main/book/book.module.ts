@@ -9,6 +9,8 @@ import { HeaderBookComponent } from './containers/header-book/header-book.compon
 import {NzIconModule} from "ng-zorro-antd/icon";
 import { CreateCoverImageComponent } from './containers/create-cover-image/create-cover-image.component';
 import {NzSelectModule} from "ng-zorro-antd/select";
+import { CreateBookAuthorComponent } from './containers/create-book-author/create-book-author.component';
+import { CreateFrameComponent } from './containers/create-frame/create-frame.component';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import {NzSelectModule} from "ng-zorro-antd/select";
     UpdateBookComponent,
     HeaderBookComponent,
     CreateCoverImageComponent,
+    CreateBookAuthorComponent,
+    CreateFrameComponent,
   ],
     imports: [
         BookRoutingModule,

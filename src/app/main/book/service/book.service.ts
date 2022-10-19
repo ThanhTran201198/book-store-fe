@@ -98,4 +98,19 @@ export class BookService {
         return throwError(httpError);
       }));
   }
+
+  /**
+   * Tạo mới khung viền
+   * @author ThanhTT92
+   */
+  createFrame(body: any): Observable<any>{
+    const payload = body;
+    return this.http
+      .post<any>(`/api/frame/create`, payload)
+      .pipe(catchError((httpError: any) => {
+        return throwError(httpError);
+      }));
+  }
+
+
 }

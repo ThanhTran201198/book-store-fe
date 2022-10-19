@@ -5,6 +5,8 @@ import {CreateBookComponent} from "./containers/create-book/create-book.componen
 import {UpdateBookComponent} from "./containers/update-book/update-book.component";
 import {HeaderBookComponent} from "./containers/header-book/header-book.component";
 import {CreateCoverImageComponent} from "./containers/create-cover-image/create-cover-image.component";
+import {CreateBookAuthorComponent} from "./containers/create-book-author/create-book-author.component";
+import {CreateFrameComponent} from "./containers/create-frame/create-frame.component";
 
 // const allPages = [
 //   {
@@ -37,6 +39,14 @@ const routes: Routes = [
   {
     path: 'coverImage/create',
     component: CreateCoverImageComponent,
+  },
+  {
+    path: 'bookAuthor/create',
+    component: CreateBookAuthorComponent,
+  },
+  {
+    path: 'frame/create',
+    component: CreateFrameComponent,
   },
 ];
 @NgModule({
