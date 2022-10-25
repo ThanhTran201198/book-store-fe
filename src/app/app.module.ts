@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 registerLocaleData(en);
 import { NzIconModule } from 'ng-zorro-antd/icon';
+// import {NzModalService} from "ng-zorro-antd/modal";
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    NzIconModule
+    NzIconModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

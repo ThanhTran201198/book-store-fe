@@ -1,0 +1,21 @@
+.category-item{
+  border: 0.5px solid #f4f4f4;
+  flex-basis: calc(100%/4);
+  text-align: center;
+  background-color: white;
+  cursor: pointer;
+}
+.category-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+.category-item:hover{
+  border: 1px solid dodgerblue;
+  color: dodgerblue;
+}
+
+.avatar {
+  width: 90%;
+}
+

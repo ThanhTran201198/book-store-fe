@@ -2,44 +2,56 @@
 <div class="container" style="position: relative; top: -140px;">
   <section style="border-radius: 10px; background-color: white;">
     <div class="row">
-<!--      <div class="col-9">-->
-<!--        <div class="card-body">-->
-<!--          <strong>-->
-<!--            Thông tin tác giả-->
-<!--          </strong>-->
-<!--          <div class="row mt-3">-->
-<!--            <div class="col-2 center-me" style="font-size: 16px;">-->
-<!--              Tên tác giả<span style="color: red;">*</span> :-->
-<!--            </div>-->
-<!--            <div class="col">-->
-<!--              <input type="text" class="form-control form-control-sm"-->
-<!--                     style="width: 70%; height: 40px; "-->
-<!--                     [(ngModel)]="authorName">-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-      <div>
+      <div class="col-8">
         <div class="card-body">
-          <div *ngIf="imageUrlAvatar === ''" class="shawdow center-image avatar" (click)="fileInputAvatar.click()">
-            <span nz-icon nzType="upload" nzTheme="outline" style="font-size: 50px;color: #9f9fcc"></span>
+          <strong>
+            Thông tin tác giả
+          </strong>
+          <div class="row mt-3">
+            <div class="col-2 center-label" style="font-size: 16px;">
+              Tên tác giả<span style="color: red;">*</span> :
+            </div>
+            <div class="col">
+              <input type="text" class="form-control form-control-sm"
+                     style="width: 70%; height: 40px; "
+                     [(ngModel)]="authorName">
+            </div>
           </div>
-          <img *ngIf="imageUrlAvatar !== ''" src="{{imageUrlAvatar}}" alt="Girl in a jacket"
-               class="shawdow avatar" (click)="fileInputAvatar.click()" style="cursor: pointer;">
+          <div class="row mt-3">
+            <div class="col-2 center-label" style="font-size: 16px;">
+              Ngày sinh<span style="color: red;">*</span> :
+            </div>
+            <div class="col">
+              <nz-date-picker [nzFormat]="'dd/MM/yyyy'"
+                              [nzPlaceHolder]="['dd/MM/yyyy']"
+                              [(ngModel)]="birthDay"
+                              style="width: 70%; height: 40px; ">
+              </nz-date-picker>
+            </div>
+          </div>
         </div>
-        <input name="file" type="file" (change)="onFileChangeAvatar($event)" #fileInputAvatar style="display: none">
       </div>
-      <div>
-        <div class="card-body" style="position: relative;">
-          <div *ngIf="imageUrlFrame === ''" class="shawdow center-image1 avatar1" (click)="fileInputFrame.click()">
-            <span nz-icon nzType="upload" nzTheme="outline" style="font-size: 50px;color: #9f9fcc"></span>
-          </div>
-          <img *ngIf="imageUrlFrame !== ''" src="{{imageUrlFrame}}" alt="Girl in a jacket"
-               class="shawdow avatar1" (click)="fileInputFrame.click()" style="cursor: pointer;">
 
+      <div class="col-4">
+        <div class="card-body">
+          <div class="row parent">
+            <div class="image-avatar parent" [style.backgroundImage]="'url(' + imageUrlAvatar + ')'">
+              <div class="image-frame parent" [style.backgroundImage]="'url(' + imageUrlFrame + ')'">
+                <div class="choose-avatar" (click)="fileInputAvatar.click()">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row parent">
+            <button class="btn btn-primary" style="margin-top: 50px" (click)="onSelectFrame()">
+              Chọn Khung Viền
+            </button>
+          </div>
         </div>
-        <input name="file" type="file" (change)="onFileChangeFrame($event)" #fileInputFrame style="display: none">
       </div>
+      <input name="file" type="file" (change)="onFileChangeAvatar($event)" #fileInputAvatar style="display: none">
+      <input name="file" type="file" (change)="onFileChangeFrame($event)" #fileInputFrame style="display: none">
 
 
     </div>
@@ -80,5 +92,10 @@
 </div>
 <button (click)="fileInputAvatar.click()">Avatar</button>
 <button (click)="fileInputFrame.click()">Frame</button>
+<button (click)="onShow()">Show</button>
+
+
+
+
 
 

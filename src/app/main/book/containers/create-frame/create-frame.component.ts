@@ -11,7 +11,7 @@ import {take} from "rxjs/operators";
 export class CreateFrameComponent implements OnInit {
   disableSave = false;
   imageUrlFrame: any = '';
-  frameName = null;
+  frameName = '';
   dataCreate: any = {};
   constructor(
     private router: Router,

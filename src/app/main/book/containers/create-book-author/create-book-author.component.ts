@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {NzModalService} from "ng-zorro-antd/modal";
+import {ModalSearchFrameComponent} from "../modal-search-frame/modal-search-frame.component";
+import {BookService} from "../../service/book.service";
 import {take} from "rxjs/operators";
 
 @Component({
@@ -9,11 +12,17 @@ import {take} from "rxjs/operators";
 })
 export class CreateBookAuthorComponent implements OnInit {
   disableSave = false;
-  imageUrlAvatar: any = '';
+  imageUrlAvatar: any = 'https://scr.vn/wp-content/uploads/2020/07/Avatar-Facebook-tr%E1%BA%AFng.jpg';
   imageUrlFrame: any = '';
   authorName = null;
+  item: any;
+  dataCreate: any ={};
+  birthDay = null;
+  imageUrl: any = 'https://i.pinimg.com/236x/d6/27/d9/d627d9cda385317de4812a4f7bd922e9--man--iron-man.jpg';
   constructor(
     private router: Router,
+    private modal: NzModalService,
+    private bookService: BookService,
   ) { }
 
   ngOnInit(): void {
@@ -50,16 +59,30 @@ export class CreateBookAuthorComponent implements OnInit {
     }
   }
   onSave(){
-    // this.dataCreate = {
-    //   name: this.booKName,
-    //   price: this.booKPrice,
-    //   description: this.bookDescription,
-    //   image: this.imageUrl,
-    //   category: 1,
-    // };
-    // this.bookService.createBook(this.dataCreate).pipe(take(1)).subscribe(res => {
-    //   if(res?.success === true) this.disableSave = true;
-    // });
+    this.dataCreate = {
+      name: this.authorName,
+      avatar: this.imageUrlAvatar,
+      frame: this.item?.keyNumber,
+      birthDay: this.birthDay,
+    };
+    this.bookService.createAuthor(this.dataCreate).pipe(take(1)).subscribe(res => {
+      if(res?.success === true) this.disableSave = true;
+    });
   }
-
+  onSelectFrame(){
+    const dialog =this.modal.create({
+        nzContent: ModalSearchFrameComponent,
+        nzTitle: 'Chọn Khung Viền',
+        // nzWrapClassName: 'width-vw-90',
+        nzStyle: {width: '1200px'},
+    });
+    dialog.afterClose.subscribe(value => {
+      this.item = value;
+      this.imageUrlFrame= value?.frame;
+      console.log(this.item);
+    });
+  }
+  onShow(){
+    console.log(this.birthDay);
+  }
 }

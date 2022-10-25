@@ -112,5 +112,30 @@ export class BookService {
       }));
   }
 
+  /**
+   * Tìm danh sách khung
+   * @author ThanhTT92
+   */
+  getListFrame(body: any): Observable<any>{
+    const payload = body;
+    return this.http
+      .post<any>(`/api/frame/search`, payload)
+      .pipe(catchError((httpError: any) => {
+        return throwError(httpError);
+      }));
+  }
+  /**
+   * Tạo mới tác giả
+   * @author ThanhTT92
+   */
+  createAuthor(body: any): Observable<any>{
+    const payload = body;
+    return this.http
+      .post<any>(`/api/bookAuthor/create`, payload)
+      .pipe(catchError((httpError: any) => {
+        return throwError(httpError);
+      }));
+  }
+
 
 }

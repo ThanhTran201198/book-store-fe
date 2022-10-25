@@ -1,0 +1,54 @@
+<!--<app-header-book></app-header-book>-->
+<!--<div class="container" style="position: relative; top: -140px;">-->
+  <section style="border-radius: 10px; background-color: white;">
+    <!--    <div class="row">-->
+    <div class="card" style="padding: 15px 5px 15px 5px">
+      <div class="row">
+        <div class="col-8">
+          <div class="row">
+            <div class="col-4">
+              <input placeholder="Tên khung viền" class="form-control w-100" type="text">
+            </div>
+            <!--            <div class="col-4">-->
+            <!--              <input placeholder="Tên yêu cầu mua sắm" class="form-control w-100" type="text">-->
+            <!--            </div>-->
+            <div class="col-4 text-left">
+              <button class="btn btn-primary" (click)="onSearch()">Tìm kiếm</button>
+            </div>
+          </div>
+        </div>
+        <!--        <div class="col-4 text-right">-->
+        <!--          <button class="btn btn-primary" style="margin-right: 10px">Xuất Excel</button>-->
+        <!--          <button class="btn btn-primary">Tìm kiếm nâng cao</button>-->
+        <!--        </div>-->
+      </div>
+    </div>
+    <div class="category-container">
+      <div *ngFor="let item of listFrame;let i = index" class="category-item" (click)="onSelect(item)">
+        <img  src="{{item?.frame}}" alt="Image Frame"
+              class="shawdow avatar"  style="cursor: pointer;">
+        <div style="font-size: 25px; margin: 10px 0px;">{{item?.name}}</div>
+      </div>
+    </div>
+
+
+    <!--    </div>-->
+<!--    <div class="d-flex mt-4">-->
+<!--      <div class="justify-content-start" style="margin: auto auto auto 20px;">-->
+<!--        <button type="button" class="btn btn-primary"-->
+<!--                style="background-color: white; color: black; border: 1px solid black;"-->
+<!--                (click)="onReturn()">-->
+<!--          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"-->
+<!--               class="bi bi-chevron-left">-->
+<!--            <path fill-rule="evenodd"-->
+<!--                  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"></path>-->
+<!--          </svg>-->
+<!--          Quay lại-->
+<!--        </button>-->
+<!--      </div>-->
+<!--    </div>-->
+
+  </section>
+<!--</div>-->
+
+

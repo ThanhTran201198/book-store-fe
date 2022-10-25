@@ -7,6 +7,7 @@ import {HeaderBookComponent} from "./containers/header-book/header-book.componen
 import {CreateCoverImageComponent} from "./containers/create-cover-image/create-cover-image.component";
 import {CreateBookAuthorComponent} from "./containers/create-book-author/create-book-author.component";
 import {CreateFrameComponent} from "./containers/create-frame/create-frame.component";
+import {ModalSearchFrameComponent} from "./containers/modal-search-frame/modal-search-frame.component";
 
 // const allPages = [
 //   {
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'frame/create',
     component: CreateFrameComponent,
+  },
+  {
+    path: 'frame/search',
+    component: ModalSearchFrameComponent,
   },
 ];
 @NgModule({
