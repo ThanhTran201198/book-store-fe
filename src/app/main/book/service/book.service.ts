@@ -1,8 +1,13 @@
 import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
 import {catchError} from "rxjs/operators";
 
+const token = localStorage.getItem('access_token');
+const headers: HttpHeaders = new HttpHeaders({
+  Authorization: 'Bearer ' + token,
+  'content-type': 'application/json'
+});
 @Injectable({
   providedIn: 'root'
 })
@@ -19,7 +24,7 @@ export class BookService {
   getLishBook(body: any): Observable<any>{
     const payload = body;
     return this.http
-      .post<any>(`/api/search`, payload)
+      .post<any>(`/api/search`, payload,  {headers})
       .pipe(catchError((httpError: any) => {
         return throwError(httpError);
       }));
